@@ -116,7 +116,7 @@ func makePump(link string, idValue string, amount string) interface{} {
 		"id":     idValue,
 		"amount": amount,
 	}
-	fmt.Printf("\033[36mลิงก์: %s\nอีโมชั่นID: %s\nจำนวน: %s\n", link, idValue, amount)
+	fmt.Printf("ลิงก์: %s\nอีโมชั่นID: %s\nจำนวน: %s\n", link, idValue, amount)
 	jsonStr, err := json.Marshal(requestBody)
 	if err != nil {
 		fmt.Println("Error marshaling request body:", err)
@@ -154,12 +154,12 @@ func makePump(link string, idValue string, amount string) interface{} {
 		if success, ok := responseData["success"].(bool); ok && success {
 			return responseData
 		} else if message, ok := responseData["message"].(string); ok {
-			fmt.Printf("\033[36mสถานะคำสั่งซื้อ: %s\n", message)
+			fmt.Printf("สถานะคำสั่งซื้อ: %s\n", message)
 		} else {
-			fmt.Println("\033[36mไม่สามารถรับข้อมูลการสั่งซื้อได้")
+			fmt.Println("ไม่สามารถรับข้อมูลการสั่งซื้อได้")
 		}
 	} else {
-		fmt.Printf("\033[36mคำขอผิดพลาดสถานะโค๊ด: %d\n", resp.StatusCode)
+		fmt.Printf("คำขอผิดพลาดสถานะโค๊ด: %d\n", resp.StatusCode)
 	}
 	return nil
 }
