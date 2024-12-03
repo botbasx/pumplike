@@ -15,4 +15,3 @@ Place the api in the api.txt file.
 #Contact
 
 Github> https://github.com/botbasx
-Facebook> https://www.facebook.com/watcharapon.kaison
